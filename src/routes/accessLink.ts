@@ -32,11 +32,15 @@ export async function accessLink(app: FastifyInstance) {
         error: 'This link does not exist or you do not have access to it.',
       })
 
-    return reply
-      .status(301)
-      .headers({
-        location: link.redirectLink,
-      })
-      .send()
+    await prisma.links.update({
+      where: {
+        id: link.id,
+      },
+      data: {
+        timesClicked: link.timesClicked + 1,
+      },
+    })
+
+    return reply.redirect(302, link.redirectLink);
   })
 }

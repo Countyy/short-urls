@@ -12,10 +12,8 @@ POST http://localhost:3333/links/create
 Content-Type: application/json
 
 {
-  "shortLink": "yb2",
-  "redirectLink": "https://www.youtube.com",
-  "isPrivate": true,
-  "password": "123"
+  "shortLink": "go",
+  "redirectLink": "https://google.com"
 }
 
 ###
