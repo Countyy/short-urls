@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model links {
+  id           String   @id @default(cuid())
+  shortLink    String   @unique @map("short_link")
+  redirectLink String   @map("redirect_link")
+  timesClicked Int      @default(0) @map("times_clicked")
+  isPrivate    Boolean  @default(false) @map("is_private")
+  createdAt    DateTime @default(now())
+  password     String?
+}
