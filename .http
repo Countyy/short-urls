@@ -3,7 +3,9 @@ Content-Type: application/json
 
 {
   "shortLink": "yb",
-  "redirectLink": "https://www.youtube.com"
+  "redirectLink": "https://www.youtube.com",
+  "isPrivate": true,
+  "password": "1234"
 }
 
 ###
@@ -19,3 +21,12 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3333/yb
+
+###
+
+GET http://localhost:3333/links/clvcw1dv70000i6apgsirs3de
+
+
+###
+
+GET http://localhost:3333/links/clvcw68de0004i6ap5sql9sc1?password=1234
