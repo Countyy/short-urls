@@ -2,12 +2,14 @@ import fastify from 'fastify'
 import { createLink } from './routes/createLink'
 import { accessLink } from './routes/accessLink'
 import { getLink } from './routes/getLink'
+import { deleteLink } from './routes/deleteLink'
 
 const app = fastify()
 
 app.register(createLink)
 app.register(accessLink)
 app.register(getLink)
+app.register(deleteLink)
 
 app.listen(
   {
