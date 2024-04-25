@@ -14,7 +14,7 @@ POST http://localhost:3333/links/create
 Content-Type: application/json
 
 {
-  "shortLink": "go",
+  "shortLink": "goo",
   "redirectLink": "https://google.com"
 }
 
@@ -36,3 +36,15 @@ GET http://localhost:3333/links/clvekizpg0000llftd5xxhl2t?password=1234
 
 
 DELETE http://localhost:3333/links/delete/clvekizpg0000llftd5xxhl2t?password=1234
+
+
+###
+
+PATCH http://localhost:3333/links/modify/clvemy6l6000018wxwkg8grh7?password=123
+Content-Type: application/json
+
+{
+  "shortLink": "go",
+  "isPrivate": false,
+  "password": "123"
+}
