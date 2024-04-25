@@ -8,7 +8,6 @@ export async function createLink(app: FastifyInstance) {
       shortLink: z.string(),
       redirectLink: z.string(),
       isPrivate: z.literal(false).nullish(),
-      password: z.string().nullish(),
     })
 
     const privateLinkBodySchema = z.object({
