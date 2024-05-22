@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import fastify from 'fastify'
 import { createLink } from './routes/createLink'
 import { accessLink } from './routes/accessLink'
@@ -6,16 +7,18 @@ import { deleteLink } from './routes/deleteLink'
 import { modifyLink } from './routes/modifyLink'
 
 const app = fastify()
-
+dotenv.config()
 app.register(createLink)
 app.register(accessLink)
 app.register(getLink)
 app.register(deleteLink)
 app.register(modifyLink)
 
+const port = process.env.PORT || 3333
+
 app.listen(
   {
-    port: 3333,
+    port: port as number,
     host: '0.0.0.0',
   },
   (err, address) => {
